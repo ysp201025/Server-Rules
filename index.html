@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏕️𝑪𝒐𝒛𝒚 𝑹𝒖𝒔𝒕𝒊𝒄 𝑴𝒔𝒑 𝑺𝒆𝒓𝒗𝒆𝒓🌲 စည်းကမ်းများ</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        /* Minecraft Pixel Font */
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://raw.githubusercontent.com/Minato-mba/Minato-mba.github.io/main/assets/fonts/minecraft.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://raw.githubusercontent.com/Minato-mba/Minato-mba.github.io/main/assets/fonts/minecraft-ten.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* ခင်ဗျားပေးထားတဲ့ Myanmar Pixel Font */
+        @font-face {
+            font-family: 'MyanmarPixel';
+            src: url('https://raw.githubusercontent.com/AungMyoKyaw/Myanmar-Unicode-Fonts/f313142354d970f966fdea58c6c7e60cdbaddfe7/MyanmarPixel/MyanmarPixel.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: thin;
+            scrollbar-color: #727273 #1e1e1f;
+        }
+
+        body {
+            font-family: 'Minecraft', 'MyanmarPixel', Arial, sans-serif;
+            background-color: #2b2b2b;
+            color: #f0f0f0;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        :root {
+            --border-thickness: 3px;
+            --border-2x-thickness: calc(2 * var(--border-thickness));
+            --button-font-size: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            height: auto;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .rules-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Header ပုံစံ */
+        .header-title {
+            background-color: #e6e8eb;
+            color: #1a1a1b;
+            padding: 20px;
+            box-shadow: 0px var(--border-2x-thickness) 0px #b1b2b5,
+                0 0 0 var(--border-thickness) #1a1a1b,
+                0 var(--border-2x-thickness) 0 var(--border-thickness) #1a1a1b;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .header-title h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Minecraft', 'MyanmarPixel', sans-serif;
+        }
+        .header-title .subtitle {
+            color: #333;
+            font-size: 1.1rem;
+            margin-top: 5px;
+            opacity: 0.8;
+            font-family: 'Minecraft', 'MyanmarPixel', sans-serif;
+        }
+
+        /* Telegram Voice Chat Info */
+        .telegram-info {
+            background-color: #2a3b4c;
+            border: var(--border-thickness) solid #3f6b8c;
+            box-shadow: 0px var(--border-2x-thickness) 0px #1a2a38,
+                0 0 0 var(--border-thickness) #1a1a1b,
+                0 var(--border-2x-thickness) 0 var(--border-thickness) #1a1a1b;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #aad4ff;
+        }
+        .telegram-info a {
+            color: #5b9bd5;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .telegram-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Rule Card - border_all Style */
+        .rule-card {
+            background-color: #48494a;
+            /* အပြင်ဘက်ဘောင် */
+            border: var(--border-thickness) solid #727273;
+            box-shadow: 0px var(--border-2x-thickness) 0px #4d4d4e,
+                0 0 0 var(--border-thickness) #1a1a1b,
+                0 var(--border-2x-thickness) 0 var(--border-thickness) #1a1a1b;
+            padding: 20px;
+            margin-bottom: 25px;
+            transition: transform 0.2s;
+            /* border_all ပုံစံ - အတွင်းဘောင် */
+            position: relative;
+        }
+        .rule-card::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 2px solid #5d5e5f;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .rule-card:hover {
+            transform: translateY(-2px);
+        }
+        .rule-card h2 {
+            color: #ffd966;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #6b8c42;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Minecraft', 'MyanmarPixel', sans-serif;
+        }
+        .rule-card h2 .material-symbols-outlined {
+            font-size: 28px;
+        }
+
+        /* Rule Item - စည်းကမ်းတစ်ခုချင်းစီအတွက် နောက်ခံ */
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            background-color: #3a3a3a;
+            border-left: 4px solid #6b8c42;
+            gap: 12px;
+            flex-wrap: wrap;
+            /* အတွင်းဘောင် ထည့်ခြင်း */
+            position: relative;
+        }
+        .rule-item::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            right: 3px;
+            bottom: 3px;
+            border: 2px solid #5d5e5f;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .rule-item .rule-icon {
+            color: #ffcc00;
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        .rule-item .rule-text {
+            flex: 1;
+            font-size: 1rem;
+            font-family: 'Minecraft', 'MyanmarPixel', sans-serif;
+        }
+
+        /* Punishment - Minecraft style */
+        .punishment {
+            background-color: #3d2b2b;
+            color: #ff9999;
+            padding: 4px 14px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            margin-left: 10px;
+            border: var(--border-thickness) solid #ff6666;
+            box-shadow: 0px var(--border-2x-thickness) 0px #661111,
+                0 0 0 var(--border-thickness) #1a1a1b,
+                0 var(--border-2x-thickness) 0 var(--border-thickness) #1a1a1b;
+            font-family: 'Minecraft', 'MyanmarPixel', sans-serif;
+            display: inline-block;
+            border-radius: 0 !important;
+            /* အတွင်းဘောင် ထည့်ခြင်း */
+            position: relative;
+        }
+        .punishment::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            right: 3px;
+            bottom: 3px;
+            border: 1px solid #ff9999;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .punishment:hover {
+            background-color: #4d2b2b;
+        }
+
+        /* Buttons (Minecraft Style) */
+        .button {
+            display: inline-block;
+            font-family: 'Minecraft', 'MyanmarPixel', sans-serif;
+            font-size: var(--button-font-size);
+            color: white;
+            padding: 8px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.05s ease-in-out;
+            min-width: 200px;
+            background-color: #3c8527;
+            border: var(--border-thickness) solid #639d52;
+            box-shadow:
+                0px var(--border-2x-thickness) 0px #1d4d13,
+                0 0 0 var(--border-thickness) #1a1a1b,
+                0 var(--border-2x-thickness) 0 var(--border-thickness) #1a1a1b;
+            color: white;
+            text-decoration: none;
+            border-radius: 0 !important;
+        }
+        .button:hover {
+            background-color: #2a641c;
+            border-color: #7fa277;
+        }
+        .button:active {
+            background-color: #2a641c;
+            border-color: #7fa277;
+            box-shadow: 0 0 0 var(--border-thickness) #1a1a1b;
+            transform: translateY(var(--border-2x-thickness));
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 15px;
+            border-top: 4px solid #444;
+            margin-top: 30px;
+        }
+        footer .links {
+            margin-top: 10px;
+        }
+        footer .links a {
+            color: #5b9bd5;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        footer .links a:hover {
+            text-decoration: underline;
+        }
+        footer p {
+            font-family: 'Minecraft', 'MyanmarPixel', sans-serif;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e1e1f;
+            border: 2px solid #3c3d3e;
+            box-shadow: inset 0 0 0 2px #1a1a1b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #727273;
+            border: var(--border-thickness) solid #929293;
+            box-shadow:
+                0 0 0 var(--border-thickness) #1a1a1b,
+                inset 0 0 0 1px #48494a;
+            min-height: 40px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #929293;
+            border-color: #b4b5b7;
+        }
+        ::-webkit-scrollbar-corner {
+            background-color: #1e1e1f;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            .header-title h1 { font-size: 1.5rem; }
+            .rule-item { flex-direction: column; align-items: flex-start; }
+            .punishment { margin-left: 0; margin-top: 5px; align-self: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="rules-wrapper">
+
+        <!-- Header ခေါင်းစဉ် -->
+        <div class="header-title">
+            <h1>🏕️𝑪𝒐𝒛𝒚 𝑹𝒖𝒔𝒕𝒊𝒄 𝑴𝒔𝒑 𝑺𝒆𝒓𝒗𝒆𝒓🌲</h1>
+            <div class="subtitle">စည်းကမ်းချက်များ</div>
+            <p style="margin-top: 10px; font-size: 1rem; font-family: 'Minecraft', 'MyanmarPixel', sans-serif;">အားလုံး ပျော်ရွှင်စွာ ကစားနိုင်ရန်အတွက်</p>
+        </div>
+
+        <!-- Telegram Voice Chat Info -->
+        <div class="telegram-info">
+            <span class="material-symbols-outlined" style="vertical-align: middle; margin-right: 5px;">mic</span>
+            <strong style="font-family: 'Minecraft', 'MyanmarPixel', sans-serif;">Voice Chat:</strong>
+            <span style="font-family: 'Minecraft', 'MyanmarPixel', sans-serif;">Telegram မှတစ်ဆင့် အသံပြောဆိုနိုင်ပါသည်။</span>
+            <a href="https://t.me/your_voice_chat_link" target="_blank" style="font-family: 'Minecraft', 'MyanmarPixel', sans-serif;">Telegram Voice Chat သို့ဝင်ရန်</a>
+        </div>
+
+        <!-- အပိုင်း ၁ - အခြေခံစည်းကမ်းများ -->
+        <div class="rule-card">
+            <h2><span class="material-symbols-outlined">gavel</span> 1. အခြေခံစည်းကမ်းများ</h2>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">check_circle</span>
+                <span class="rule-text">အားလုံးကို လေးစားပါ။ အခြားသူများကို စော်ကားခြင်း၊ နှောင့်ယှက်ခြင်းမပြုရ။</span>
+                <span class="punishment">Warning → Kick</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">block</span>
+                <span class="rule-text">Hack / Cheat / X-ray သုံးစွဲခြင်း လုံးဝခွင့်မပြုပါ။</span>
+                <span class="punishment">Permanent Ban</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">volume_up</span>
+                <span class="rule-text">Telegram Voice Chat တွင် အော်ဟစ်ခြင်း၊ ဆူညံခြင်းမပြုရ။</span>
+                <span class="punishment">Mute 1 hour</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">badge</span>
+                <span class="rule-text">ထိုးထွင်းသော / မသင့်လျော်သော username သို့မဟုတ် skin မသုံးရ။</span>
+                <span class="punishment">Request change</span>
+            </div>
+        </div>
+
+        <!-- အပိုင်း ၂ - ဆောက်လုပ်ခြင်းနှင့် နယ်မြေ -->
+        <div class="rule-card">
+            <h2><span class="material-symbols-outlined">home</span> 2. ဆောက်လုပ်ခြင်းနှင့် နယ်မြေ</h2>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">block</span>
+                <span class="rule-text">အခြားသူ၏ အိမ် / နယ်မြေထဲသို့ ခွင့်မပြုဘဲ မဝင်ရ။ (Griefing တားမြစ်သည်)</span>
+                <span class="punishment">Ban 3 days</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">explosion</span>
+                <span class="rule-text">TNT, Lava, Water ကို အခြားသူများ၏ နေရာတွင် ဖျက်ဆီးရန် အသုံးမပြုရ။</span>
+                <span class="punishment">Ban 1 week</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">forest</span>
+                <span class="rule-text">သစ်ပင်များ အလွန်အကျွံခုတ်ခြင်း (ပြန်မစိုက်ခြင်း) မပြုရ။</span>
+                <span class="punishment">Warning</span>
+            </div>
+        </div>
+
+        <!-- အပိုင်း ၃ - PvP နှင့် ပြိုင်ဆိုင်မှု -->
+        <div class="rule-card">
+            <h2><span class="material-symbols-outlined">swords</span> 3. PvP နှင့် ပြိုင်ဆိုင်မှု</h2>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">crosshair</span>
+                <span class="rule-text">PvP ကို သဘောတူညီမှုမရှိဘဲ မစတင်ရ။ (သေစေနိုင်သော တိုက်ခိုက်မှု)</span>
+                <span class="punishment">Kick + Warning</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">place</span>
+                <span class="rule-text">Spawn area အနီးတွင် PvP လုံးဝခွင့်မပြုပါ။</span>
+                <span class="punishment">Ban 1 day</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">inventory_2</span>
+                <span class="rule-text">သေဆုံးသွားသူ၏ item များကို ခွင့်မပြုဘဲ ယူငင်ခြင်းမပြုရ။</span>
+                <span class="punishment">Return item + warning</span>
+            </div>
+        </div>
+
+        <!-- အပိုင်း ၄ - စီးပွားရေးနှင့် စနစ် -->
+        <div class="rule-card">
+            <h2><span class="material-symbols-outlined">paid</span> 4. စီးပွားရေးနှင့် စနစ်</h2>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">warning</span>
+                <span class="rule-text">ဈေးကွက်ထဲတွင် ဈေးအတက်အကျ လိမ်လည်ခြင်း (Scam) မပြုရ။</span>
+                <span class="punishment">Ban 2 days + ပစ္စည်းသိမ်း</span>
+            </div>
+            <div class="rule-item">
+                <span class="rule-icon material-symbols-outlined">timer</span>
+                <span class="rule-text">အလွန်အကျွံ ကုန်သွယ်ခြင်း (AFK farming) ခွင့်မပြုပါ။</span>
+                <span class="punishment">Kick + Warning</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>စည်းကမ်းချက်များကို လိုက်နာရန် ပျက်ကွက်ပါက အထက်ပါ အရေးယူမှုများ ခံရနိုင်ပါသည်။</p>
+            <p>ကျေးဇူးပြု၍ အားလုံး ပျော်ရွှင်စွာ ကစားကြပါစို့။ 🎮</p>
+            <div class="links">
+                <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAd5JREFUaIHtW0GOgkAQZDacTGQh8Yof4Mb/3+DND+gDhpXEK3uSlIbK9CysJlNTpxHHtitddmoadN77AjA9FnVdFyEMwxDc83O/B/cgvne74J4/5OYei6+obBKAHOGyABkjqqp6cyrb4nK54MuZo1yF5Qi7aZrmcqOMx3H8SEJbYb/fz+vb7Tav5SqcCaeOTDh1lGs+jJ2QIbbb/0dMhFyF5QiXliMeA/pVJrOu66Jins/nxeso9aZpomIiR7kKyxGO7tIoLZw84BolhBJt23Yx5vV6DcZnOcR2bLkKyxF23vv5eHg8Huc3mFReJgmLsMiSAX8OFrliziwHzFmuwnKES8vcGOWxRq4WsM6PQNlbOjZylKuwHGGT8cAhGAOaBwQzG2vioNQxN+dcEYJcheUImySNXRHlhPJjBgDvTlq6LouD5gHlHXu8lauwHOHNhnhs+GYxJ7iHxbEM9yyQq7Ac4dLyTAV6VOZ1LebEgtg4liMkcpSrsBzh6C7NTAiC+WHWaZksmQ9fM0uXq7AcYZOk0d+yIR6TJfPGDBifzavxu2Ljy1VYjnB+bCl1ZMKpIxNOHU/G43A4fCqPzcG4yFVYjvDTDXFE3/fvzmVTnE6nxetyFZYj7PIftRKHHOFftjO/i3w4MwIAAAAASUVORK5CYII=" alt="Discord" style="width:40px;height:40px;vertical-align:middle;image-rendering:pixelated;margin:0 8px;"></a>
+                <a href="https://t.me/your_voice_chat_link" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAa1JREFUaIHtm0FugzAURKFiFQkKEls4BPc/AzsuAAcwBSlbuoo1jfjluzZQMbyVExH0RzMxH2NiY0wELK9BnufRFuM4bh7z9XxuHoN8Ph6bx/yhtvg1+HCq5gLQCU4iiDGSZdnBpYSl73v8aDXSOUwnOF6WxdqNMZ7n+ZSCQpGmqR1P02THdA7fgq/OLfjqJGcX8Bs402rQXFnoHKYTnGhu8fZGii72w9ItIdZfFMXmMXQO0wk+dJaWoou9riuuPT+dw3SCd4m066wrXSkwrlVVBamNzmE6wYnrujHi0zAMw2DHdV2vnvNtIc6CfwH8rQRqpHOYTrBqlg7V6+KsK8W467rNc/pA5zCdYFWkMWZSvDXRRaQYaxoMnzVzOofpBKsirbm4a/CJcSjoHKYTnGj2VITCJ8Y+i42okc5hOsGHLuLhbI/bpfbomSXoHKYTfNrTQ3ws8rYb0IJR1/TnGugcphOcHDlDSkhP/aRFPFdQI53DdIL/9R6PULelCJ3DdIJ/RLosy7PqCI6khc5hOsGxMWb1FYCmaY6uJSht265+T+cwneD4flHr4tAJ/gZoc5BE7Eu4cgAAAABJRU5ErkJggg==" alt="Telegram" style="width:40px;height:40px;vertical-align:middle;image-rendering:pixelated;margin:0 8px;"></a>
+                <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAeNJREFUaIHtW8Fqg0AQzRavSg65RnoXAs3/nwK5phDwB/RcFP0Ae2mWl+CwM91N0ub5TpOw4jzec5gdV9d13QowXYL1er0Koe/74JpxHINrEHmeB9f8Ijd3Cd5M2bwA6AhnK7AxoiiKB6eSFk3T4E/PkU5hOsJumiYvN9r4HtU1BjH5DMPgYzqF6Qhn1gsk62JV1DQGGmDzUJbl7Bqr1ekUpiNstjRWPLQcWgtja/WWLIqPDK6RrC6BTmE6wplmi6exJVrr83wOrv9S3Pdjt/PxzTZ2NjfpcUCOdArTEVZVaazMCMlCaMVUkCp/Xdc+1lRsOoXpCJsbD01/ew/gvWBHu/TSIdARzqyW+I9AjnQK0xFWVWlpG/gsYD6anhxBpzAdYXPjgdBszVIh1b3oFKYjrLK0NGfGwVqqubFm7r1Y2gA6wpl1boz2btvWxzh5wGbAOv04HI8+ft9uTddKQI50CtMRVlVp5/ypn6v5cFVVPkYrxgBtLFXjmEeGTmE6wuZeGm2GlRntHQONjWNApzAd4cx6HkPqmW9OvgXXS5CsG/P6BjnSKUxHONlJvL+G5STeD+gIXzUem83mWXkkh8SFTmE6wq7rutlPAPb7/aNzSYrT6TT7P53CdITd8qHWi4OO8DfQmM6b+QnTqgAAAABJRU5ErkJggg==" alt="Website" style="width:40px;height:40px;vertical-align:middle;image-rendering:pixelated;margin:0 8px;"></a>
+            </div>
+            <p style="font-size:0.8em; opacity:0.7; margin-top:8px; font-family: 'Minecraft', 'MyanmarPixel', sans-serif;">ထုတ်ပြန်သည့်ရက်: 2026-06-04</p>
+        </footer>
+
+    </div>
+</div>
+
+</body>
+</html>
